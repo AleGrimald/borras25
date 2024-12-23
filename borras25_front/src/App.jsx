@@ -1,5 +1,3 @@
-// src/App.js
-import React from 'react';
 import './App.css';
 import UserList from './components/UserList';
 import Header from './components/Header';
@@ -17,7 +15,7 @@ function App() {
           <Route path='/clientes' element={<div>CLIENTES</div>} />
           <Route path='/profesor' element={<div>PROFESOR</div>} />
           <Route path='/admin' element={<div>ADMIN</div>} />
-          <Route path='/usuarios' element={<UserList />} /> {/* Aquí incluimos el UserList */}
+          <Route path='/usuarios' element={<UserList />} />
         </Routes>
         <Footer />
       </div>
