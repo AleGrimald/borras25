@@ -3,15 +3,21 @@ import { useEffect, useState } from 'react';
 const UserList = () => {
   const [users, setUsers] = useState([]);
 
+// src/components/UserList.js
   useEffect(() => {
-    // URL de tu endpoint en producción
-    const url = 'https://borras25.netlify.app/.netlify/functions/getData';
+    const url = 'https://borras25.netlify.app/.netlify/functions/getData'; // Asegúrate de que esta URL sea correcta
 
     fetch(url)
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       .then(data => setUsers(data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
+
 
   return (
     <div>
