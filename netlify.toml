@@ -1,0 +1,8 @@
+[build]
+  publish = "borras25_front/dist"
+  functions = "borras25_back/functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
