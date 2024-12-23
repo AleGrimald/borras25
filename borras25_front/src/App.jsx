@@ -4,19 +4,8 @@ import Main from './component/Main';
 import Footer from './component/Footer';
 import UserList from './component/UserList'
 import {Routes, Route} from 'react-router-dom';
-import { useState, useEffect } from 'react';
 
 function App() {
-  const [datos, setData] = useState();
-
-  useEffect(()=>{
-    fetch('http://localhost:5173/api/data')
-      .then(response => response.json())
-      .then(data => {setData(data)
-        console.log(datos)
-      })
-      .catch(error=> console.log('Error en el FETCH: ',error));
-  },[datos]);
   
   return (
     <div className='App'>
