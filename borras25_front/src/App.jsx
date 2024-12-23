@@ -1,8 +1,8 @@
 import './App.css';
-import UserList from './components/UserList';
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import UserList from './component/UserList';
+import Header from './component/Header';
+import Main from './component/Main';
+import Footer from './component/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {

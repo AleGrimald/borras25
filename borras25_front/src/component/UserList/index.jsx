@@ -1,4 +1,3 @@
-// src/components/UserList.js
 import { useEffect, useState } from 'react';
 
 const UserList = () => {
@@ -6,7 +5,7 @@ const UserList = () => {
 
   useEffect(() => {
     // URL de tu endpoint en producción
-    const url = 'https://borras25.netlify.app/.netlify/functions/getData'; // Asegúrate de que esta URL sea correcta
+    const url = 'https://borras25.netlify.app/.netlify/functions/getData';
 
     fetch(url)
       .then(response => response.json())
