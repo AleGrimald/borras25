@@ -1,8 +1,8 @@
 import './Header.css';
 
-const Header = ()=>{
-    //const { } = props;
-
+const Header = (props)=>{
+    const {manejoLogin} = props;
+    
     return<header className='header'>
         <nav className='header_nav'>
             <div className='nav_logo'>
@@ -20,7 +20,7 @@ const Header = ()=>{
             </ul>
 
             <div className='nav_boton'>
-                <button className='boton_unete'>Log-in</button>
+                <button onClick={manejoLogin} className='boton_unete'>Log-in</button>
             </div>
         </nav>
 

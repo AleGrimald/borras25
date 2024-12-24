@@ -3,15 +3,26 @@ import UserList from './component/UserList';
 import Header from './component/Header';
 import Main from './component/Main';
 import Footer from './component/Footer';
-import { Routes, Route } from 'react-router-dom';
+import Login from './component/Login';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 function App() {
+  const [btnLogin, setBtnLogin] = useState(true);
+  const navegador = useNavigate();
+  
+
+  const manejoLogin= ()=>{
+    setBtnLogin(btnLogin => !btnLogin);
+    btnLogin?navegador('/login'):navegador('/');    
+  }
+
   return (
     <div className='App'>
-      <Header />
+      <Header manejoLogin={manejoLogin}/>
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/clientes' element={<div>CLIENTES</div>} />
+        <Route path='/login' element={<Login estado={btnLogin}/>} />
         <Route path='/profesor' element={<div>PROFESOR</div>} />
         <Route path='/admin' element={<div>ADMIN</div>} />
         <Route path='/usuarios' element={<UserList />} />
