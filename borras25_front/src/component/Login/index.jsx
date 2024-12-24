@@ -2,7 +2,7 @@ import './Login.css';
 import { useEffect, useState } from 'react';
 
 const Login = (props)=>{
-    const {estado} = props
+    const {estado} = props;
     const [usuarios, setUsuarios] = useState([]);
 
     useEffect(() => {
@@ -20,7 +20,14 @@ const Login = (props)=>{
     }, [estado]);
 
     const manejoSubmit =(e)=>{
+        let inp_usuario = document.querySelector("#inp_usuario").value;
+        let inp_passw = document.querySelector("#inp_passw").value;
         e.preventDefault();
+        usuarios.map(user=>{
+            if(user.usuario === inp_usuario && user.passw === inp_passw){
+                console.log("ES HORA DE ENTRENAR, ",user.usuario)
+            }
+        })
         console.log(usuarios)
     }
 
@@ -28,8 +35,8 @@ const Login = (props)=>{
         <div className="login-container"> 
             <h2>Iniciar Sesión</h2> 
             <form onSubmit={manejoSubmit}> 
-                <input type="text" name="username" placeholder="Nombre de usuario" required /> 
-                <input type="password" name="password" placeholder="Contraseña" required /> 
+                <input id='inp_usuario' type="text" name="username" placeholder="Nombre de usuario" required /> 
+                <input id='inp_passw' type="password" name="password" placeholder="Contraseña" required /> 
                 <button type="submit">Iniciar Sesión</button> 
             </form> 
         </div>
