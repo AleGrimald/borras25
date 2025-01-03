@@ -1,8 +1,9 @@
 import './Login.css';
+import NavBar from '../NavBar';
 import { useEffect, useState } from 'react';
 
 const Login = (props)=>{
-    const {estado} = props;
+    const {estado,  manejoLogin} = props;
     const [usuarios, setUsuarios] = useState([]);
 
     useEffect(() => {
@@ -31,16 +32,19 @@ const Login = (props)=>{
         console.log(usuarios)
     }
 
-    return <>
-        <div className="login-container"> 
-            <h2>Iniciar Sesión</h2> 
-            <form onSubmit={manejoSubmit}> 
-                <input id='inp_usuario' type="text" name="username" placeholder="Nombre de usuario" required /> 
-                <input id='inp_passw' type="password" name="password" placeholder="Contraseña" required /> 
-                <button type="submit">Iniciar Sesión</button> 
+    return <div className="contenedor_login">
+        <NavBar clase ="nav_bar"  manejoLogin={manejoLogin} estado={estado}/>
+        <div className='login'>
+            <h2 className='login_h2'>Iniciar Sesión</h2> 
+            <form className='login_form' onSubmit={manejoSubmit}> 
+                <input className='login_inp' id='inp_usuario' type="text" name="username" placeholder="Nombre de usuario" required /> 
+                <input className='login_inp' id='inp_passw' type="password" name="password" placeholder="Contraseña" required /> 
+                <button className='login_submit' type="submit">Ingresar</button> 
             </form> 
-        </div>
-    </>
+        </div> 
+        
+    </div>
+
 }
 
 export default Login;

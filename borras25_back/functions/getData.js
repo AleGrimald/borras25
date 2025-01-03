@@ -9,7 +9,6 @@ const connection = mysql.createConnection({
   database: process.env.MYSQL_ADDON_DB,
   port: process.env.MYSQL_ADDON_PORT,
 });
-
 connection.connect();
 
 exports.handler = async (event, context) => {

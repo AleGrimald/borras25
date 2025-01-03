@@ -6,7 +6,7 @@ const UserList = () => {
 // src/components/UserList.js
   useEffect(() => {
     const url = 'https://borras25.netlify.app/.netlify/functions/getData'; // Asegúrate de que esta URL sea correcta
-
+    
     fetch(url)
       .then(response => {
         if (!response.ok) {

@@ -13,17 +13,19 @@ function App() {
   
 
   const manejoLogin= ()=>{
-    setBtnLogin(btnLogin => !btnLogin);
-    btnLogin?navegador('/login'):navegador('/');    
+    btnLogin?navegador('/login'):navegador('/'); 
+    setBtnLogin(btnLogin => !btnLogin);   
   }
 
   return (
     <div className='App'>
-      <Header manejoLogin={manejoLogin}/>
+      {
+        btnLogin?<Header manejoLogin={manejoLogin} estado={btnLogin}/>:<></>
+      }
+          
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/login' element={<Login estado={btnLogin}/>} />
-        <Route path='/profesor' element={<div>PROFESOR</div>} />
+        <Route path='/login' element={<Login estado={btnLogin} manejoLogin={manejoLogin}/>} />
         <Route path='/admin' element={<div>ADMIN</div>} />
         <Route path='/usuarios' element={<UserList />} />
       </Routes>

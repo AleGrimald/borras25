@@ -1,28 +1,11 @@
 import './Header.css';
+import NavBar from '../NavBar';
 
 const Header = (props)=>{
-    const {manejoLogin} = props;
+    const {manejoLogin, estado} = props;
     
     return<header className='header'>
-        <nav className='header_nav'>
-            <div className='nav_logo'>
-                <img className='logo_img' src="logo_borras.svg" alt="" />
-                <div className='logo_texto'>
-                    <h1 className='texto_h1'>BORRAS FRANCO</h1>
-                    <h5 className='texto_h5'>PROF. EDUCACION FISICA</h5>
-                </div>
-            </div>
-
-            <ul className='nav_lista'>
-                <li className='lista_li'><a className='li_a' href="">Entrenamiento</a></li>
-                <li className='lista_li'><a className='li_a' href="">Nutricion</a></li>
-                <li className='lista_li'><a className='li_a' href="">Testimonios</a></li>
-            </ul>
-
-            <div className='nav_boton'>
-                <button onClick={manejoLogin} className='boton_unete'>Log-in</button>
-            </div>
-        </nav>
+        <NavBar manejoLogin = {manejoLogin} clase="header_nav" estado={estado}/>
 
         <section className='header_section'>
             <div className='section_texto'>
@@ -31,7 +14,7 @@ const Header = (props)=>{
             </div>
 
             <div className='section_boton'>
-                <button className='boton_contacto'>CONTACTAME AHORA</button>
+                <a href='https://wa.me/3816335140' className='boton_contacto'>CONTACTAME AHORA</a>
             </div>
         </section>
     </header>
